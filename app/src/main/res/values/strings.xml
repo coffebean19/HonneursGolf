@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">TestingMaps</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="choose_a_hole">Choose a hole</string>
+    <string name="choose">Choose</string>
+    <string name="todo">TODO</string>
+    <string name="detect_ball">Detect Ball</string>
+    <string name="show_ball">Show Ball</string>
+    <string-array name="holes_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+
+    </string-array>
+
+    <string name="permission_required">Location access is required to display the device on the map.</string>
+    <string name="ok">OK</string>
+    <string name="permission_granted">Permission is granted. You can see yourself on the map now.</string>
+    <string name="track_ball">Track ball</string>
+    <string name="loading">Loading</string>
+    <string name="detecting">Detecting</string>
+    <string name="tracking">Tracking</string>
+    <string name="cancel">Cancel</string>
+    <string name="show_message">show message</string>
+    <string name="back">Back</string>
+</resources>
