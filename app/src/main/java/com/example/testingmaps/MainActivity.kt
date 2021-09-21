@@ -375,7 +375,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         startActivity(intent)
     }
 
-    //Switch view
+    //Receive device permission
+    private fun getPermission() {
+
+    }
 
 }
 
