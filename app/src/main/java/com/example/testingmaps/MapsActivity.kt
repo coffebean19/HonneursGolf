@@ -1,29 +1,20 @@
 package com.example.testingmaps
 
-import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
-import android.os.Looper
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 
 internal class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
@@ -31,28 +22,7 @@ internal class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     private lateinit var mMap: GoogleMap
-    private var permissionDenied = false
-    internal lateinit var mLastLocation: Location
-    internal lateinit var mLocationResult: LocationRequest
-    internal lateinit var mLocationCallback: LocationCallback
-    internal var mCurrLocationMarker: Marker? = null
-    internal var mGoogleApiClient: GoogleApiClient? = null
-    internal lateinit var mLocationRequest: LocationRequest
-    internal var mFusedLocationClient: FusedLocationProviderClient? = null
     private val LOCATION_PERMISSION_REQUEST = 1
-
-    //Request for location access on device
-    private val requestPermissionLauncher =
-        registerForActivityResult(
-            ActivityResultContracts.RequestPermission()
-        ) { isGranted: Boolean ->
-            if (isGranted) {
-                Toast.makeText(this, "we have location access", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "No location access on user", Toast.LENGTH_SHORT).show()
-            }
-
-        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -100,6 +70,7 @@ internal class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         Toast.makeText(this, "${lat}, ${long}", Toast.LENGTH_LONG).show()
     }
 
+
     //Help from the indian guy on Youtube code
     @SuppressLint("MissingPermission")
     private fun getLocationAccess() {
@@ -128,5 +99,26 @@ internal class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
                 finish()
             }
         }
+    }
+
+    override fun onMyLocationButtonClick(): Boolean {
+        TODO("Not yet implemented")
+        Toast.makeText(this, "This is location button clicked", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onMyLocationClick(p0: Location) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onConnected(p0: Bundle?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onConnectionSuspended(p0: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onConnectionFailed(p0: ConnectionResult) {
+        TODO("Not yet implemented")
     }
 }
