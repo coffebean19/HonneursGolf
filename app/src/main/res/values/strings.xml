@@ -38,4 +38,5 @@
     <string name="cancel">Cancel</string>
     <string name="show_message">show message</string>
     <string name="back">Back</string>
+    <string name="enable_device_location">Enable Device Location</string>
 </resources>
