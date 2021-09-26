@@ -10,7 +10,6 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -19,9 +18,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestingMaps">
-        <activity
-            android:name=".DetectObject"
-            android:exported="true" />
         <activity
             android:name=".ShowBall"
             android:exported="true" />
@@ -56,10 +52,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service
-            android:name="BallNavigationService"
-            android:foregroundServiceType="location"
-            tools:ignore="MissingClass" />
+
     </application>
 
 </manifest>
