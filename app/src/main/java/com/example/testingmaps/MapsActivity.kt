@@ -74,6 +74,7 @@ internal class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     //Help from the indian guy on Youtube code
     @SuppressLint("MissingPermission")
     private fun getLocationAccess() {
+        // checks if the user has given permission to use location, if yes, enable the location layer. If not, ask for location access
         if (ContextCompat.checkSelfPermission(this,
             android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mMap.isMyLocationEnabled = true
@@ -84,6 +85,7 @@ internal class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     }
 
     @SuppressLint("MissingPermission")
+    //The result of the permission request. If yes, then enable location layer. If not, then just show the map
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -96,14 +98,15 @@ internal class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
             }
             else {
                 Toast.makeText(this, "User has not granted location access permission", Toast.LENGTH_LONG).show()
-                finish()
+                //finish()
             }
         }
     }
 
+    //The little location button in the corner of the screen
     override fun onMyLocationButtonClick(): Boolean {
         TODO("Not yet implemented")
-        Toast.makeText(this, "This is location button clicked", Toast.LENGTH_SHORT).show()
+        getLocationAccess()
     }
 
     override fun onMyLocationClick(p0: Location) {
