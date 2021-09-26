@@ -39,7 +39,9 @@
           android:layout_marginStart="64dp"
           android:layout_marginTop="80dp"
           android:width="128dp"
-          android:text="@string/back" />
+          android:backgroundTint="#F44336"
+          android:text="@string/back"
+          android:textColor="#000000" />
 
       <Button
           android:id="@+id/btnShow"
@@ -155,7 +157,7 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      tools:visibility="visible">
+      tools:visibility="gone">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardChoose"
